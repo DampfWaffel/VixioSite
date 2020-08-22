@@ -1,0 +1,12 @@
+{
+  "version": 3,
+  "file": "bundle.css",
+  "sources": [
+    "../../TopArrow.svelte"
+  ],
+  "sourcesContent": [
+    "<script>\n\n    import { onMount } from 'svelte';\n\n    let visible = false;\n\n    function scrollFunction() {\n        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {\n            visible = true;\n        } else {\n            visible = false;\n        }\n    }\n\n    async function backTop() {\n        document.body.scrollTop = 0;\n        document.documentElement.scrollTop = 0;\n    }\n    \n    onMount(async () => {\n        window.onscroll = scrollFunction;\n    })\n\n</script>\n\n<style>\n    .topButton {\n        position: fixed;\n        bottom: 20px;\n        right: 30px;\n        z-index: 99;\n        font-size: 18px;\n        border: none;\n        background-color: #4aabd9;\n        color: white;\n        cursor: pointer;\n        padding: 12px 15px 12px 15px;\n        border-radius: 4px;\n    }\n</style>\n\n{#if visible}\n    <button class=\"topButton\" on:click={backTop}><i class=\"fas fa-chevron-up\"></i></button>\n{/if}"
+  ],
+  "names": [],
+  "mappings": "AA0BI,UAAU,cAAC,CAAC,AACR,QAAQ,CAAE,KAAK,CACf,MAAM,CAAE,IAAI,CACZ,KAAK,CAAE,IAAI,CACX,OAAO,CAAE,EAAE,CACX,SAAS,CAAE,IAAI,CACf,MAAM,CAAE,IAAI,CACZ,gBAAgB,CAAE,OAAO,CACzB,KAAK,CAAE,KAAK,CACZ,MAAM,CAAE,OAAO,CACf,OAAO,CAAE,IAAI,CAAC,IAAI,CAAC,IAAI,CAAC,IAAI,CAC5B,aAAa,CAAE,GAAG,AACtB,CAAC"
+}
